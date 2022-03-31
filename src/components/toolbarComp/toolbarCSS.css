@@ -1,0 +1,37 @@
+.toolbar {
+    background-color: gray;
+    color: white;
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.toolbar-right {
+    cursor: pointer;
+    padding: 2px 5px;
+    border-bottom: 1px solid gray;
+    transition: 0.2s;
+}
+
+.toolbar-right:hover {
+    border-color: white;
+    transition: 0.2s;
+}
+
+.toolbar-left {
+    display: flex;
+    gap: 20px;
+}
+
+.toolbar-left > div {
+    cursor: pointer;
+    padding: 2px 5px;
+    border-bottom: 1px solid gray;
+}
+
+.toolbar-left > div:hover {
+    border-color: white;
+    transition: 0.2s;
+}
+
