@@ -1,0 +1,87 @@
+.profile_bg {
+    height: 100vh;
+    background-color: rgb(247,247,242);
+    padding: 20px 100px;
+
+    display: flex;
+    gap: 20px;
+}
+
+.toolbar {
+    background-color: rgb(56,129,134);
+    border-top: 1px solid rgba(218, 218, 218, 0.15);
+    padding: 10px 100px;
+    display: flex;
+    gap: 20px;
+    color: white;
+}
+
+.toolbar div {
+    cursor: pointer;
+    padding: 0 5px;
+    transition: 0.2s;
+}
+
+.toolbar div:hover {
+    border-bottom: 1px solid white;
+    transition: 0.2s;
+}
+
+.selected {
+    border-bottom: 1px solid white;
+}
+
+.my_posts {
+    background-color: lightgrey;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.my_comments {
+    background-color: lightgrey;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.userInfo {
+    background-color: lightgrey;
+    width: 200px;
+    padding: 20px;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stats {
+    margin: 10px 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.userImage {
+    width: 150px;
+}
+
+.edit_btn {
+    width: 100%;
+    border: none;
+    padding: 5px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgb(56,129,134);
+    transition: 0.2s;
+}
+
+.create_btn {
+    width: 100%;
+    border: none;
+    padding: 5px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgb(56,129,134);
+    transition: 0.2s;
+}
