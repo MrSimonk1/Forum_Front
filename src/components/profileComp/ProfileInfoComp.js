@@ -11,8 +11,14 @@ const ProfileInfoComp = () => {
         http.get("userProfileInfo")
             .then((res) => {
                 setUser(res.user);
-            })
+                console.log(res);
+            });    
     }, [])
+
+    function dateConverter(timestamp) {
+        const date = new Date(timestamp);
+        return date.toLocaleDateString("lt-LT");
+    }
 
     return (
         <div>
@@ -22,9 +28,9 @@ const ProfileInfoComp = () => {
                 <h2>{user.username}</h2>
                 <button className={styles.edit_btn}>Edit profile</button>
                 <div className={styles.stats}>
-                    <div>Created: date</div>
-                    <div>Total topics: 0</div>
-                    <div>Total replies: 0</div>
+                    <div>Created: {dateConverter(user.dateRegistration)}</div>
+                    <div>Total posts: {user.totalPosts}</div>
+                    <div>Total comments: {user.totalComments}</div>
                 </div>
                 <button className={styles.create_btn}>Create topic</button>
             </div>}

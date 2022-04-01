@@ -85,3 +85,18 @@
     background-color: rgb(56,129,134);
     transition: 0.2s;
 }
+
+@media (max-width: 767px) {
+    .sm_d_none {
+        display: none;
+    }
+    .sm_d {
+        display: flex;
+    }
+}
+
+@media (min-width: 768px) {
+    .m_d_none {
+        display: none;
+    }
+}
