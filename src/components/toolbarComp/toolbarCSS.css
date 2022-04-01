@@ -1,5 +1,5 @@
 .toolbar {
-    background-color: rgb(56,129,134);
+    background-color: rgb(64,63,60);
     color: white;
     padding: 10px 20px;
 
@@ -10,7 +10,7 @@
 .toolbar-right {
     cursor: pointer;
     padding: 2px 5px;
-    border-bottom: 1px solid rgb(56,129,134);
+    border-bottom: 1px solid rgb(64,63,60);
     transition: 0.2s;
 }
 
@@ -27,7 +27,7 @@
 .toolbar-left > div {
     cursor: pointer;
     padding: 2px 5px;
-    border-bottom: 1px solid rgb(56,129,134);
+    border-bottom: 1px solid rgb(64,63,60);
 }
 
 .toolbar-left > div:hover {

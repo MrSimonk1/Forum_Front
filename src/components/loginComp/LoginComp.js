@@ -26,7 +26,7 @@ const LoginComp = () => {
                 }
                 if (res.success) {
                     setMessage(null);
-                    navigate("/profile");
+                    navigate(`/profile/${res.user._id}/${res.user.username}`);
                 }
             })
     }

@@ -1,0 +1,65 @@
+.grow4 {
+    flex: 4
+}
+
+.grow2 {
+    flex: 2
+}
+
+.grow1 {
+    flex: 1
+}
+
+.bg {
+    padding: 20px 50px;
+    height: 100vh;
+    background-color: rgb(217,208,209);
+}
+
+.info_bar {
+    display: flex;
+    background-color: rgb(64,63,60);
+    color: white;
+    padding: 10px;
+}
+
+.replies {
+    text-align: center;
+}
+
+.topic_preview {
+    display: flex;
+}
+
+.all_previews {
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.topic_preview {
+    padding: 10px;
+    background-color: rgb(176,167,164);
+    border-bottom: 1px solid gray;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(130, 91, 18);
+    cursor: pointer;
+    border-bottom: 1px solid rgb(176,167,164);
+    transition: 0.2s;
+}
+
+.title:hover {
+    border-bottom: 1px solid rgb(130, 91, 18);
+    transition: 0.2s;
+}
+
+.date {
+    color: rgb(130, 91, 18);
+}
+
+.text {
+    color: rgb(64,63,60);
+}

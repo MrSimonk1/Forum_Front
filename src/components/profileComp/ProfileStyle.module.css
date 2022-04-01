@@ -1,21 +1,3 @@
-.profile_bg {
-    height: 100vh;
-    background-color: rgb(247,247,242);
-    padding: 20px 100px;
-
-    display: flex;
-    gap: 20px;
-}
-
-.toolbar {
-    background-color: rgb(56,129,134);
-    border-top: 1px solid rgba(218, 218, 218, 0.15);
-    padding: 10px 100px;
-    display: flex;
-    gap: 20px;
-    color: white;
-}
-
 .toolbar div {
     cursor: pointer;
     padding: 0 5px;
@@ -72,7 +54,8 @@
     padding: 5px 0;
     border-radius: 10px;
     cursor: pointer;
-    background-color: rgb(56,129,134);
+    background-color: rgb(64,63,60);
+    color: white;
     transition: 0.2s;
 }
 
@@ -82,7 +65,8 @@
     padding: 5px 0;
     border-radius: 10px;
     cursor: pointer;
-    background-color: rgb(56,129,134);
+    background-color: rgb(64,63,60);
+    color: white;
     transition: 0.2s;
 }
 
@@ -93,10 +77,49 @@
     .sm_d {
         display: flex;
     }
+
+    .profile_bg {
+        height: 100vh;
+        background-color: rgb(247,247,242);
+        padding: 20px 50px;
+    
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .toolbar {
+        background-color: rgb(64,63,60);
+        border-top: 1px solid rgba(218, 218, 218, 0.15);
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-evenly;
+        gap: 20px;
+        color: white;
+    }
 }
 
 @media (min-width: 768px) {
     .m_d_none {
         display: none;
     }
+
+    .profile_bg {
+        height: 100vh;
+        background-color: rgb(247,247,242);
+        padding: 20px 100px;
+    
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .toolbar {
+    background-color: rgb(64,63,60);
+    border-top: 1px solid rgba(218, 218, 218, 0.15);
+    padding: 10px 100px;
+    display: flex;
+    gap: 20px;
+    color: white;
+}
 }

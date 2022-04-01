@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import {useEffect} from "react";
+import { useNavigate } from 'react-router-dom';
 import http from "../../plugins/http";
 import styles from "./ProfileStyle.module.css";
 
 const ProfileInfoComp = () => {
 
     const [user, setUser] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         http.get("userProfileInfo")
@@ -29,10 +31,10 @@ const ProfileInfoComp = () => {
                 <button className={styles.edit_btn}>Edit profile</button>
                 <div className={styles.stats}>
                     <div>Created: {dateConverter(user.dateRegistration)}</div>
-                    <div>Total posts: {user.totalPosts}</div>
+                    <div>Total topics: {user.totalTopics}</div>
                     <div>Total comments: {user.totalComments}</div>
                 </div>
-                <button className={styles.create_btn}>Create topic</button>
+                <button className={styles.create_btn} onClick={() => navigate("/create-topic")}>Create topic</button>
             </div>}
         </div>
     );
