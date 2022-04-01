@@ -26,7 +26,7 @@ const CreateTopicComp = () => {
                         comment: refs.comment.current.value
                     }
 
-                    http.post(commentInfo, "comment")
+                    http.post(commentInfo, "initial-comment")
                         .then((res) => {
                             console.log(res)
                         })
