@@ -12,7 +12,7 @@ const OneTopicPreview = ({info}) => {
     }
 
     function goToSingleTopic() {
-        navigate(`/topic/${info.title}`);
+        navigate(`/topic/${info._id}/${info.title}`);
     }
 
     return (

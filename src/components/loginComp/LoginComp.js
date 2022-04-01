@@ -2,11 +2,14 @@ import React, {useRef, useState} from 'react';
 import "./loginCSS.css"
 import {useNavigate} from "react-router-dom";
 import http from "../../plugins/http";
+import { useContext } from 'react';
+import { MyContext } from '../../contexts/MyContext';
 
 const LoginComp = () => {
 
     const navigate = useNavigate();
     const [message, setMessage] = useState(null);
+    const {setLoggedInPerson} = useContext(MyContext);
 
     const refs = {
         username: useRef(),
@@ -26,6 +29,7 @@ const LoginComp = () => {
                 }
                 if (res.success) {
                     setMessage(null);
+                    setLoggedInPerson(res.user);
                     navigate(`/profile/${res.user._id}/${res.user.username}`);
                 }
             })
