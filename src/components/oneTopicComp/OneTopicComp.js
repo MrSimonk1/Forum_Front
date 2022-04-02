@@ -12,6 +12,7 @@ const OneTopicComp = () => {
     const [topic, setTopic] = useState(null);
     const [comments, setComments] = useState(null);
 
+
     const {id} = useParams();
     
     useEffect(() => {
@@ -45,7 +46,6 @@ const OneTopicComp = () => {
             {topic && comments && 
                 <div className={styles.bg}>
                     <TitleComp title={topic.title}/>
-                    hello
                     {displayComments(comments)}
                     <WriteCommentComp topicId={id} setComments={setComments}/>
                 </div>
