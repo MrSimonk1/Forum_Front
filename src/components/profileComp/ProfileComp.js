@@ -13,7 +13,7 @@ const ProfileComp = () => {
         <div>
             <ProfileToolbarComp selected={selected} setSelected={setSelected}/>
             <div className={styles.profile_bg}>
-                {selected === 0 && <MyForumsComp/>}
+                {selected === 0 &&  <div className={styles.w100}><MyForumsComp/></div> }          
                 {selected === 1 && <MyCommentsComp/>}
                 <div className={selected === 2 ? `${styles.sm_d}` : `${styles.sm_d_none}`}>
                    <ProfileInfoComp/> 

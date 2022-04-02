@@ -1,0 +1,30 @@
+.loader_bg {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.loader {
+    height: 40px;
+    width: 40px;
+    border-top: 8px solid rgb(64,63,60);
+    border-bottom: 8px solid rgb(217,208,209);
+    border-left: 8px solid rgb(217,208,209);
+    border-right: 8px solid rgb(217,208,209);
+
+    border-radius: 50%;
+
+    animation-name: smallLoaderSpin;
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes smallLoaderSpin {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -3,11 +3,24 @@ import "./toolbarCSS.css";
 import {useNavigate} from "react-router-dom";
 import { useContext } from 'react';
 import { MyContext } from '../../contexts/MyContext';
+import http from '../../plugins/http';
 
 const ToolbarComp = () => {
 
     const navigate = useNavigate();
     const {loggedInPerson} = useContext(MyContext);
+
+    function goToProfile() {
+        http.get("check-logged-in")
+            .then((res) => {
+                if (res.success) {
+                    navigate(`/profile/${loggedInPerson._id}/${loggedInPerson.username}`)
+                }
+                if (!res.success) {
+                    navigate("/login");
+                }
+            })
+    }
 
     function displayToolbar() {
         return (
@@ -17,7 +30,7 @@ const ToolbarComp = () => {
                 </div>
                 <div className="toolbar-left">
                     <div>Favorites</div>
-                    {loggedInPerson ? <div onClick={() => navigate(`/profile/${loggedInPerson._id}/${loggedInPerson.username}`)}>Profile</div> : <div onClick={() => navigate("/login")}>Login</div>}
+                    {loggedInPerson ? <div onClick={() => goToProfile()}>Profile</div> : <div onClick={() => navigate("/login")}>Login</div>}
                 </div>
             </div>
         )

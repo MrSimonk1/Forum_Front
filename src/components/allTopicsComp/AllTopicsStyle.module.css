@@ -11,8 +11,7 @@
 }
 
 .bg {
-    padding: 20px 50px;
-    height: 100vh;
+    min-height: 100vh;
     background-color: rgb(217,208,209);
 }
 
@@ -34,6 +33,24 @@
 .all_previews {
     border-radius: 5px;
     overflow: hidden;
+}
+
+.empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(176,167,164);
+}
+
+.empty button {
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgb(64,63,60);
+    color: white;
+    transition: 0.2s;
 }
 
 .topic_preview {

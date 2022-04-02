@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from "./ProfileStyle.module.css";
+import AllTopicsComp from '../allTopicsComp/AllTopicsComp';
 
 const MyForumsComp = () => {
+
     return (
-        <div className={styles.my_posts}>
-            Posts
+        <div>
+            <AllTopicsComp url="getTopicsOfOneUser"/>
         </div>
     );
 };
