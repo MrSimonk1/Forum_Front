@@ -45,7 +45,7 @@ const MyCommentsComp = () => {
             {!comments && <SmallLoader/>}
             {comments && comments.length === 0 && <h4>You have not commented on any topic</h4>}
             {comments && comments.length !== 0 && <div className={styles.p10}>
-                {comments.map((x, index) => <div key={x._id}><OneCommentComp index={index} comment={x}/></div>)}
+                {comments.map((x, index) => <div key={x._id}><OneCommentComp index={index} comment={x} page={page}/></div>)}
             </div>}
         </div>
     );

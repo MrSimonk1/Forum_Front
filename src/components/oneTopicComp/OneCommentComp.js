@@ -3,7 +3,9 @@ import http from "../../plugins/http";
 import styles from "./OneTopicStyle.module.css";
 
 
-const OneCommentComp = ({index, comment}) => {
+const OneCommentComp = ({index, comment, page}) => {
+
+    console.log(page)
 
     console.log(index, comment);
     const [user, setUser] = useState(null);
@@ -53,7 +55,7 @@ const OneCommentComp = ({index, comment}) => {
                 </div>
                 <div className={`${styles.date_position} ${styles.grow2}`}>
                     <div>{displayDate(comment.commentDate)} {displayTime(comment.commentDate)}</div>
-                    <div>#{index + 1}</div>
+                    <div>#{index + 1 + (Number(page) * 10 -10)}</div>
                 </div>
             </div>
             <div className={styles.comment_main}>
