@@ -11,7 +11,8 @@ const OneTopicComp = () => {
 
     const [topic, setTopic] = useState(null);
     const [comments, setComments] = useState(null);
-
+    const [page, setPage] = useState(1);
+    const [count, setCount] = useState(null);
 
     const {id} = useParams();
     
@@ -24,14 +25,28 @@ const OneTopicComp = () => {
                 } 
             })
         
-        http.get(`getCommentsOfOneTopic/${id}`)
+        http.get(`getCommentsOfOneTopic/${id}/${page}`)
             .then((res) => {
                 console.log(res);
                 if  (res.success) {
                     setComments(res.comments);
+                    setCount(res.count);
                 }
             })
     }, [])
+
+    function changePage(newPage) {
+        setPage(newPage);
+
+        http.get(`getCommentsOfOneTopic/${id}/${newPage}`)
+            .then((res) => {
+                console.log(res);
+                if  (res.success) {
+                    setComments(res.comments);
+                    setCount(res.count);
+                }
+            })
+    }
 
     function displayComments(comments) {
         return (
@@ -46,6 +61,7 @@ const OneTopicComp = () => {
             {topic && comments && 
                 <div className={styles.bg}>
                     <TitleComp title={topic.title}/>
+                    <PaginationMain page={page} count={count} changePage={changePage}/>
                     {displayComments(comments)}
                     <WriteCommentComp topicId={id} setComments={setComments}/>
                 </div>
