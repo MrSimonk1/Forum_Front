@@ -5,6 +5,7 @@ import styles from "./OneTopicStyle.module.css";
 import TitleComp from "./TitleComp";
 import OneCommentComp from "./OneCommentComp";
 import WriteCommentComp from "./WriteCommentComp";
+import PaginationMain from "../paginationComp/PaginationMain";
 
 const OneTopicComp = () => {
 
@@ -44,6 +45,7 @@ const OneTopicComp = () => {
             {topic && comments && 
                 <div className={styles.bg}>
                     <TitleComp title={topic.title}/>
+                    hello
                     {displayComments(comments)}
                     <WriteCommentComp topicId={id} setComments={setComments}/>
                 </div>

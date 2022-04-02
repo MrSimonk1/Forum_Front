@@ -45,9 +45,6 @@ const OneCommentComp = ({index, comment}) => {
         return date.toLocaleTimeString("lt-LT");
     }
 
-  
-
-
     return (
         <div>
             <div className={styles.comment_top}>
