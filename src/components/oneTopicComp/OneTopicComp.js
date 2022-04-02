@@ -45,7 +45,7 @@ const OneTopicComp = () => {
                 <div className={styles.bg}>
                     <TitleComp title={topic.title}/>
                     {displayComments(comments)}
-                    <WriteCommentComp/>
+                    <WriteCommentComp topicId={id} setComments={setComments}/>
                 </div>
             }            
         </div>        

@@ -61,7 +61,7 @@ const OneCommentComp = ({index, comment}) => {
             </div>
             <div className={styles.comment_main}>
                 <div className={`${styles.grow1} ${styles.user_info}`}>{displayCommenter()}</div>
-                <div className={`${styles.grow2} ${styles.comment}`}>asd</div>
+                <div className={`${styles.grow2} ${styles.comment}`}>{comment.comment}</div>
             </div>
         </div>
     )

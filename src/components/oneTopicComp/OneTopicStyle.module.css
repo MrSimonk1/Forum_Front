@@ -16,7 +16,7 @@
 
 .bg {
     background-color: rgb(217,208,209);
-    height: 100vh;
+    min-height: 100vh;
     padding: 20px 50px;
 }
 
