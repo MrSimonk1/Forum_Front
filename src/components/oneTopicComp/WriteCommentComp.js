@@ -5,7 +5,7 @@ import { MyContext } from "../../contexts/MyContext";
 import styles from "./OneTopicStyle.module.css";
 import http from "../../plugins/http";
 
-const WriteCommentComp = ({topicId, setComments}) => {
+const WriteCommentComp = ({topicId, setComments, commentCount, setPage, setCount}) => {
 
     const { loggedInPerson } = useContext(MyContext);
     const navigate = useNavigate();
@@ -13,6 +13,21 @@ const WriteCommentComp = ({topicId, setComments}) => {
 
     const commentRef = useRef();
     const scrollBottomRef = useRef();
+
+    function goToLastPage() {
+        if (commentCount) {
+            if (commentCount < 10) {
+                const count = 1;
+                return count
+            }
+            if (commentCount >= 10) {
+                const count = Math.floor(commentCount / 10);
+
+                return count + 1;
+            }
+            
+        }
+    }
 
     function writeComment() {
 
@@ -30,13 +45,15 @@ const WriteCommentComp = ({topicId, setComments}) => {
                     }, 1500)  
                 }
                 if (res.success) {
-                    http.get(`getCommentsOfOneTopic/${topicId}`)
+                    http.get(`getCommentsOfOneTopic/${topicId}/${goToLastPage()}`)
                         .then((res) => {
                             console.log(res);
                             if  (res.success) {
                                 setMessage(res.message);
                                 setTimeout(() => {setMessage(null)}, 1500)                            
                                 setComments(res.comments);
+                                setCount(res.count);
+                                setPage(goToLastPage);            
                                 document.querySelector("textarea").value = "";
                                 setTimeout(function () {
                                     scrollBottomRef.current.scrollIntoView({top: 100, behavior: "smooth"});

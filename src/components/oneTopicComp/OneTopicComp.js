@@ -63,7 +63,7 @@ const OneTopicComp = () => {
                     <TitleComp title={topic.title}/>
                     <PaginationMain page={page} count={count} changePage={changePage}/>
                     {displayComments(comments)}
-                    <WriteCommentComp topicId={id} setComments={setComments}/>
+                    <WriteCommentComp topicId={id} setComments={setComments} commentCount={count} setPage={setPage} setCount={setCount}/>
                 </div>
             }            
         </div>        
