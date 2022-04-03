@@ -45,6 +45,7 @@ const AllTopicsComp = ({url}) => {
                             <div className={styles.grow4}>Topic</div>
                             <div className={`${styles.grow1} ${styles.replies}`}>Replies</div>
                             <div className={styles.grow2}>Latest reply</div>
+                            <div className={styles.empty_div}></div>
                         </div>
                         <PaginationMain page={page} count={count} changePage={changePage}/>
                         {topics && topics.map(x => <div key={x._id}><OneTopicPreview info={x}/></div>)}

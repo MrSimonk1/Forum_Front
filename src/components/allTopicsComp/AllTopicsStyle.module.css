@@ -79,3 +79,12 @@
 .text {
     color: rgb(64,63,60);
 }
+
+.empty_div {
+    width: 16px;
+}
+
+.favoriteStarEmpty {
+    color: rgb(130, 91, 18);
+    cursor: pointer;
+}

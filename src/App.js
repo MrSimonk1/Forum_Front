@@ -8,17 +8,23 @@ import CreateTopicPage from './pages/CreateTopicPage';
 import AllTopicsPage from './pages/AllTopicsPage';
 import OneTopicPage from './pages/OneTopicPage';
 import { MyContext } from './contexts/MyContext';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
 
   const [loggedInPerson, setLoggedInPerson] = useState(null);
+  const [favoriteCounter, setFavoriteCounter] = useState(null);
+
+  useEffect(() => {
+    if (!localStorage.getItem("favoriteTopics")) localStorage.setItem("favoriteTopics", JSON.stringify([]));
+    setFavoriteCounter(JSON.parse(localStorage.favoriteTopics).length)
+  })
 
   return (
     <div className="App">
           <BrowserRouter>
 
-          <MyContext.Provider value={{loggedInPerson, setLoggedInPerson}}>
+          <MyContext.Provider value={{loggedInPerson, setLoggedInPerson, setFavoriteCounter, favoriteCounter}}>
                 <ToolbarComp/>
                 <Routes>
                     <Route path="/login" element={<LoginPage/>}/>

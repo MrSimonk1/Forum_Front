@@ -8,7 +8,7 @@ import http from '../../plugins/http';
 const ToolbarComp = () => {
 
     const navigate = useNavigate();
-    const {loggedInPerson} = useContext(MyContext);
+    const {loggedInPerson, favoriteCounter} = useContext(MyContext);
 
     function goToProfile() {
         http.get("check-logged-in")
@@ -29,7 +29,7 @@ const ToolbarComp = () => {
                     Forum
                 </div>
                 <div className="toolbar-left">
-                    <div>Favorites</div>
+                    <div>Favorites {favoriteCounter}</div>
                     {loggedInPerson ? <div onClick={() => goToProfile()}>Profile</div> : <div onClick={() => navigate("/login")}>Login</div>}
                 </div>
             </div>
