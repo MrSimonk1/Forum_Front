@@ -7,6 +7,7 @@ import ProfilePage from "./pages/ProfilePage";
 import CreateTopicPage from './pages/CreateTopicPage';
 import AllTopicsPage from './pages/AllTopicsPage';
 import OneTopicPage from './pages/OneTopicPage';
+import FavoritesPage from './pages/FavoritesPage';
 import { MyContext } from './contexts/MyContext';
 import { useEffect, useState } from 'react';
 
@@ -33,6 +34,8 @@ function App() {
                     <Route path='/create-topic' element={<CreateTopicPage/>}/>
                     <Route path='/' element={<AllTopicsPage/>}/>
                     <Route path='/topic/:id/:topic' element={<OneTopicPage/>}/>
+                    <Route path='/favorites' element={<FavoritesPage/>}/>
+
                 </Routes>
           </MyContext.Provider>
               

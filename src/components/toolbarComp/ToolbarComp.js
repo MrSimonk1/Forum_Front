@@ -29,7 +29,7 @@ const ToolbarComp = () => {
                     Forum
                 </div>
                 <div className="toolbar-left">
-                    <div>Favorites {favoriteCounter}</div>
+                    <div onClick={() => navigate("/favorites")}>Favorites {favoriteCounter}</div>
                     {loggedInPerson ? <div onClick={() => goToProfile()}>Profile</div> : <div onClick={() => navigate("/login")}>Login</div>}
                 </div>
             </div>

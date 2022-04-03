@@ -1,12 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./AllTopicsStyle.module.css";
+import styles from "../allTopicsComp/AllTopicsStyle.module.css";
 import {AiOutlineStar, AiTwotoneStar} from "react-icons/ai";
 import { useContext } from "react";
 import { MyContext } from "../../contexts/MyContext";
 
-const OneTopicPreview = ({info, fnSetFavorites}) => {
+const OneFavoritePreview = ({info, fnSetNewFavorites}) => {
 
     const navigate = useNavigate();
     const {setFavoriteCounter} = useContext(MyContext);
@@ -35,6 +35,7 @@ const OneTopicPreview = ({info, fnSetFavorites}) => {
             }
             localStorage.setItem("favoriteTopics", JSON.stringify(favoriteTopics));
             setFavoriteCounter(JSON.parse(localStorage.favoriteTopics).length);
+            fnSetNewFavorites();
         }
 
         if (!favorite) {
@@ -51,9 +52,7 @@ const OneTopicPreview = ({info, fnSetFavorites}) => {
                     <AiTwotoneStar onClick={setToFavorite}/>
                 </div>
                 ) 
-        }   
-        
-        fnSetFavorites();
+        }      
     }
 
     return (
@@ -81,4 +80,4 @@ const OneTopicPreview = ({info, fnSetFavorites}) => {
     )
 }
 
-export default OneTopicPreview;
+export default OneFavoritePreview;
