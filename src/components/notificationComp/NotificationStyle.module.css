@@ -1,0 +1,70 @@
+.notification_icon {
+    position: relative;
+
+}
+
+.notification_list {
+    height: 200px;
+    width: 220px;
+    position: absolute;
+    right: -90px;
+    border: 1px solid rgb(217,208,209);
+    background-color: rgb(64,63,60);
+    overflow-y: scroll;
+}
+
+.notification_list::-webkit-scrollbar {
+    background-color: rgb(64,63,60);
+    width: 3px;
+}
+
+.notification_count {
+    background-color: rgb(130,91,18);
+    border-radius: 50%;
+    padding: 2px;
+    height: 15px;
+    width: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+
+    position: absolute;
+    right: -10px;
+    top: -5px;
+}
+
+.one_item_not_seen {
+    margin: 2px;
+    background-color: rgb(176,167,164);
+    color: black;
+    padding: 2px;
+    font-size: 15px;
+    border: 3px solid rgb(130,91,18);
+}
+
+.one_item_seen {
+    margin: 2px;
+    background-color: rgb(176,167,164);
+    color: black;
+    padding: 2px;
+    font-size: 15px;   
+}
+
+.commenter {
+    color: rgb(130,91,18);
+}
+
+.title {
+    color: rgb(130,91,18);
+    cursor: pointer;
+}
+
+.title:hover {
+    border-bottom: 1px solid rgb(130,91,18);
+}
+
+.date {
+    color: rgb(130,91,18);
+}

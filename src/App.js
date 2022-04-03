@@ -15,6 +15,7 @@ function App() {
 
   const [loggedInPerson, setLoggedInPerson] = useState(null);
   const [favoriteCounter, setFavoriteCounter] = useState(null);
+  const [notificationCount, setNotificationCount] = useState(0);
 
   useEffect(() => {
     if (!localStorage.getItem("favoriteTopics")) localStorage.setItem("favoriteTopics", JSON.stringify([]));
@@ -25,7 +26,7 @@ function App() {
     <div className="App">
           <BrowserRouter>
 
-          <MyContext.Provider value={{loggedInPerson, setLoggedInPerson, setFavoriteCounter, favoriteCounter}}>
+          <MyContext.Provider value={{loggedInPerson, setLoggedInPerson, setFavoriteCounter, favoriteCounter, notificationCount, setNotificationCount}}>
                 <ToolbarComp/>
                 <Routes>
                     <Route path="/login" element={<LoginPage/>}/>

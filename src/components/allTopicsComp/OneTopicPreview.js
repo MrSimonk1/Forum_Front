@@ -6,7 +6,7 @@ import {AiOutlineStar, AiTwotoneStar} from "react-icons/ai";
 import { useContext } from "react";
 import { MyContext } from "../../contexts/MyContext";
 
-const OneTopicPreview = ({info, fnSetFavorites}) => {
+const OneTopicPreview = ({info}) => {
 
     const navigate = useNavigate();
     const {setFavoriteCounter} = useContext(MyContext);
@@ -51,9 +51,7 @@ const OneTopicPreview = ({info, fnSetFavorites}) => {
                     <AiTwotoneStar onClick={setToFavorite}/>
                 </div>
                 ) 
-        }   
-        
-        fnSetFavorites();
+        }      
     }
 
     return (

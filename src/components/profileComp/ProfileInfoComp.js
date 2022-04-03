@@ -10,7 +10,7 @@ const ProfileInfoComp = () => {
 
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
-    const {setLoggedInPerson} = useContext(MyContext);
+    const {setLoggedInPerson, setNotificationCount} = useContext(MyContext);
 
     useEffect(() => {
         http.get("userProfileInfo")
@@ -31,6 +31,9 @@ const ProfileInfoComp = () => {
     }
 
     function logout() {
+
+        setNotificationCount(0);
+
         http.get("logout")
             .then((res) => {
                 if (res.success) {
