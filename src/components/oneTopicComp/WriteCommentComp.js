@@ -4,12 +4,14 @@ import { useNavigate } from "react-router-dom";
 import { MyContext } from "../../contexts/MyContext";
 import styles from "./OneTopicStyle.module.css";
 import http from "../../plugins/http";
+import LoginModal from "./LoginModal";
 
 const WriteCommentComp = ({topicId, setComments, commentCount, setPage, setCount}) => {
 
     const { loggedInPerson } = useContext(MyContext);
     const navigate = useNavigate();
     const [message, setMessage] = useState(null);
+    const [showLoginModal, setShowLoginModal] = useState(false);
 
     const commentRef = useRef();
     const scrollBottomRef = useRef();
@@ -69,7 +71,11 @@ const WriteCommentComp = ({topicId, setComments, commentCount, setPage, setCount
             return (
                 <div className={styles.comment_field_bg}>
                        <textarea ref={commentRef}></textarea> 
-                       <button ref={scrollBottomRef} onClick={writeComment}>Comment</button>
+                       <button ref={scrollBottomRef} 
+                               onClick={writeComment}
+                               className={styles.login_button}>
+                           Comment
+                       </button>
                        {message && <h4>{message}</h4>}
                 </div>
             )
@@ -80,7 +86,8 @@ const WriteCommentComp = ({topicId, setComments, commentCount, setPage, setCount
                 <div className={styles.comment_field_bg}>
                        <h4>You are not logged in</h4>
                        <h4>Only registered users can leave a comment</h4> 
-                       <button onClick={() => navigate("/login")}>Login</button>
+                       <button className={styles.login_button} onClick={() => setShowLoginModal(true)}>Login</button>
+                       {showLoginModal && <LoginModal setShowModal={setShowLoginModal}/>}
                 </div>
             )
         }

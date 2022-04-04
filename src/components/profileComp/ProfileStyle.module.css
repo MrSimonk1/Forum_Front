@@ -120,7 +120,7 @@
 }
 
 .modal_bg {
-    position: absolute;
+    position: fixed;
     background-color: rgba(243, 243, 243, 0.415);
     backdrop-filter: blur(2px);
     top: 0;
@@ -142,6 +142,7 @@
 
     display: flex;
     flex-direction: column;
+    gap: 5px;
 }
 
 .modal_body h3 {
