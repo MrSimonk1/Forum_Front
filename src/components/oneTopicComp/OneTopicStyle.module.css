@@ -28,6 +28,18 @@
     border-radius: 5px 5px 0 0;
 }
 
+.topic_commented_title {
+    cursor: pointer;
+    color: rgb(85, 58, 9);
+    margin: 0;
+
+}
+
+.topic_commented_title:hover {
+    text-decoration: underline;
+    text-decoration-color: rgb(85, 58, 9);   
+}
+
 .bg_comments {
     background-color: rgb(176,167,164);
     padding: 10px;
@@ -42,6 +54,20 @@
 
 .comment_main {
     display: flex;
+}
+
+.comment {
+    white-space: pre;
+    overflow-y: hidden;
+}
+
+.comment::-webkit-scrollbar {
+    height: 10px;
+    color: black
+}
+
+.comment::-webkit-scrollbar-track {
+    background-color: darkgrey;
 }
 
 .date_position {

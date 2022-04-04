@@ -18,6 +18,7 @@ const CreateTopicComp = () => {
 
         http.post(titleInfo, "create-topic")
             .then((res) => {
+                console.log(res);
                 if (res.success) {
                     const id = res.id;
 

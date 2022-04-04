@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import http from "../../plugins/http";
 import styles from "./OneTopicStyle.module.css";
 
 
-const OneCommentComp = ({index, comment, page}) => {
+const OneCommentComp = ({profile, index, comment, page}) => {
+
+    const date = new Date(comment.commentDate);
+    const dateDate = date.toLocaleDateString("lt-Lt");
+    const dateTime = date.toLocaleTimeString("lt-LT");
+    const navigate = useNavigate();
 
     console.log(page)
 
@@ -26,41 +32,38 @@ const OneCommentComp = ({index, comment, page}) => {
 
     function displayCommenter() {
         if (user) {
+            const date = new Date (user.dateRegistration);
+            const dateOfRegistration = date.toLocaleDateString("lt-LT");
             return (
                 <div>
                     <img className={styles.userImage} src={user.image}/>
-                    <div>Registered: {displayDate(user.dateRegistration)}</div>
+                    <div>Registered: {dateOfRegistration}</div>
                     <div>Total topics: {user.totalTopics}</div>
+                    <div>Total comments: {user.totalComments}</div>
                 </div>
             )
         }
-    }
-
-    function displayDate(timestamp) {
-        const date = new Date(timestamp);
-        return date.toLocaleDateString("lt-Lt");
-
-    }
-
-    function displayTime(timestamp) {
-        const date = new Date(timestamp);
-        return date.toLocaleTimeString("lt-LT");
     }
 
     return (
         <div>
             <div className={styles.comment_top}>
                 <div className={styles.grow1}>
-                    {comment.commentBy}
+                    {profile ? <p className={styles.topic_commented_title}
+                                    onClick={() => navigate(`/topic/${comment.topicCommented}/${comment.topicCommentedTitle}`)}>
+                                 {comment.topicCommentedTitle}
+                               </p> 
+                               : 
+                               comment.commentBy}
                 </div>
                 <div className={`${styles.date_position} ${styles.grow2}`}>
-                    <div>{displayDate(comment.commentDate)} {displayTime(comment.commentDate)}</div>
+                    <div>{dateDate} {dateTime}</div>
                     <div>#{index + 1 + (Number(page) * 10 -10)}</div>
                 </div>
             </div>
             <div className={styles.comment_main}>
                 <div className={`${styles.grow1} ${styles.user_info}`}>{displayCommenter()}</div>
-                <div className={`${styles.grow2} ${styles.comment}`}>{comment.comment}</div>
+                <div id='text' className={`${styles.grow2} ${styles.comment}`}>{comment.comment}</div>
             </div>
         </div>
     )

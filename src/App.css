@@ -1,5 +1,8 @@
 .App {
     font-family: SansSerif;
+    background-color: rgb(217,208,209);
+    min-height: 100vh;
+    width: 100vw;
 }
 
 

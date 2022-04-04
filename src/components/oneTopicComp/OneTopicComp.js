@@ -51,7 +51,7 @@ const OneTopicComp = () => {
     function displayComments(comments) {
         return (
             <div className={styles.bg_comments}>
-                        {comments.map((x, i) => <div key={x._id}><OneCommentComp index={i} page={page} comment={x}/></div>)}
+                        {comments.map((x, i) => <div key={x._id}><OneCommentComp profile={false} index={i} page={page} comment={x}/></div>)}
             </div>
         )
     }
