@@ -4,6 +4,7 @@ import ProfileToolbarComp from "./ProfileToolbarComp";
 import MyForumsComp from "./MyForumsComp";
 import MyCommentsComp from "./MyCommentsComp";
 import styles from "./ProfileStyle.module.css";
+import ProfileSmallToolbar from './ProfileSmallToolbar';
 
 const ProfileComp = () => {
 
@@ -11,7 +12,12 @@ const ProfileComp = () => {
 
     return (
         <div>
-            <ProfileToolbarComp selected={selected} setSelected={setSelected}/>
+            <div className={styles.xs_d_none}>
+                <ProfileToolbarComp selected={selected} setSelected={setSelected}/>
+            </div>
+            <div>
+                <ProfileSmallToolbar selected={selected} setSelected={setSelected}/>
+            </div>
             <div className={styles.profile_bg}>
                 {selected === 0 &&  <div className={styles.w100}><MyForumsComp/></div> }          
                 {selected === 1 && <MyCommentsComp/>}

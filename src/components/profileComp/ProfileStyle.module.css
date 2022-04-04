@@ -147,6 +147,7 @@
 
 .modal_body h3 {
     margin: 5px 0;
+    color: rgb(39, 38, 36);
 }
 
 .modal_body input {
@@ -180,7 +181,12 @@
     transition: 0.2s;
 }
 
-@media (max-width: 767px) {
+.small_toolbar {
+    display: none;
+}
+
+
+@media (max-width: 899px) {
     .sm_d_none {
         display: none;
     }
@@ -201,35 +207,110 @@
     .toolbar {
         background-color: rgb(64,63,60);
         border-top: 1px solid rgba(218, 218, 218, 0.15);
-        padding: 10px 0;
+        padding: 10px 50px;
         display: flex;
-        justify-content: space-evenly;
+        gap: 20px;
+        color: white;
+    }
+
+}
+
+@media (min-width: 900px) {
+    .m_d_none {
+        display: none;
+    } 
+
+    .profile_bg {
+        min-height: 100vh;
+        background-color: rgb(217,208,209);
+        padding: 20px 100px;
+        gap: 20px;
+    
+        display: flex;
+        justify-content: center;
+    }  
+
+    .toolbar {
+        background-color: rgb(64,63,60);
+        border-top: 1px solid rgba(218, 218, 218, 0.15);
+        padding: 10px 100px;
+        display: flex;
         gap: 20px;
         color: white;
     }
 }
 
-@media (min-width: 768px) {
-    .m_d_none {
-        display: none;
-    }
-
+@media (min-width: 1200px) {
     .profile_bg {
         min-height: 100vh;
         background-color: rgb(217,208,209);
-        padding: 20px 50px;
+        padding: 20px 250px;
         gap: 20px;
     
         display: flex;
         justify-content: center;
+    }   
+
+    .toolbar {
+        background-color: rgb(64,63,60);
+        border-top: 1px solid rgba(218, 218, 218, 0.15);
+        padding: 10px 250px;
+        display: flex;
+        gap: 20px;
+        color: white;
+    }
+}
+
+@media (max-width: 400px) {
+    .profile_bg {
+        min-height: 100vh;
+        background-color: rgb(217,208,209);
+        padding: 10px 10px;
+    
+        display: flex;
+        justify-content: center;
+    }  
+    
+    .xs_d_none {
+        display: none;
+    }
+
+    .small_toolbar {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 10px;
+
+        background-color: rgb(64,63,60);
+        border-top: 1px solid rgba(218, 218, 218, 0.15);
+        color: white;
+    }
+
+    .small_toolbar div {
+        cursor: pointer;
+    }
+
+    .small_toolbar div:hover {
+        border-bottom: 1px solid white;
     }
 
     .toolbar {
-    background-color: rgb(64,63,60);
-    border-top: 1px solid rgba(218, 218, 218, 0.15);
-    padding: 10px 100px;
-    display: flex;
-    gap: 20px;
-    color: white;
-}
+        display: none;
+    }
+
+    .userInfo {
+        background-color: rgb(176,167,164);
+        width: 150px;
+        padding: 20px;
+        border-radius: 5px;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .userImage {
+        width: 120px;
+    }
+   
 }

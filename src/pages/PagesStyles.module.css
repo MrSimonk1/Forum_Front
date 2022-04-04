@@ -3,3 +3,28 @@
     min-height: 100vh;
     background-color: rgb(217,208,209);
 }
+
+@media (max-width: 400px) {
+    .bg_and_padding {
+        padding: 10px 10px;
+        min-height: 100vh;
+        background-color: rgb(217,208,209);
+        overflow-y: hidden;
+    }
+}
+
+@media (min-width: 768px) {
+    .bg_and_padding {
+        padding: 20px 100px;
+        min-height: 100vh;
+        background-color: rgb(217,208,209);
+    }
+}
+
+@media (min-width: 1200px) {
+    .bg_and_padding {
+        padding: 20px 250px;
+        min-height: 100vh;
+        background-color: rgb(217,208,209);
+    }
+}

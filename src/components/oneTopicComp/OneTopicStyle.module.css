@@ -15,9 +15,6 @@
 }
 
 .bg {
-    background-color: rgb(217,208,209);
-    min-height: 100vh;
-    padding: 20px 50px;
     position: relative;
 }
 
