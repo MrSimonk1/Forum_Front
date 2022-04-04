@@ -19,7 +19,7 @@ const RegisterComp = () => {
             username: refs.username.current.value,
             passOne: refs.passOne.current.value,
             passTwo: refs.passTwo.current.value,
-            image: refs.image.current.value,
+            picture: refs.image.current.value,
         }
         http.post(userInfo, "register")
             .then((res) => {
@@ -27,8 +27,7 @@ const RegisterComp = () => {
                 if (res.success) {
                     setTimeout(() => {
                         setMessage(null);
-                        navigate("/login")
-                    }, 1500)
+                    }, 3000)
                 }
             })
     }

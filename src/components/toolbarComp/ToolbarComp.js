@@ -39,7 +39,7 @@ const ToolbarComp = () => {
                 </div>
                 <div className="toolbar-left">
                     <div onClick={() => navigate("/favorites")}>Favorites {favoriteCounter}</div>
-                    <NotificationComp/>
+                    {loggedInPerson && <NotificationComp/>}
                     {loggedInPerson ? <div onClick={() => goToProfile()}>Profile</div> : <div onClick={() => navigate("/login")}>Login</div>}
                 </div>
             </div>
