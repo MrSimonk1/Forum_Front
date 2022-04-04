@@ -1,11 +1,44 @@
-.create_bg {
-    height: 100vh;
-
-    padding: 20px 100px;
-    background-color: rgb(247,247,242);
-}
-
-.container {
+.create_container {
     display: flex;
     flex-direction: column;
+    gap: 10px;
+}
+
+.create_container input {
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.create_container input:focus {
+    outline: none;
+}
+
+.create_container textarea {
+    padding: 5px;
+    border-radius: 5px;
+    height: 150px;
+    resize: none;
+    border: 1px solid gray;
+}
+
+.create_container textarea:focus {
+    outline: none;
+}
+
+.create_container button {
+    width: 120px;
+    border: none;
+    padding: 5px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgb(64,63,60);
+    color: white;
+    transition: 0.2s;
+}
+
+.button_div {
+    display: flex;
+    justify-content: center;
 }

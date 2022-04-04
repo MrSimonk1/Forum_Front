@@ -36,11 +36,13 @@ const CreateTopicComp = () => {
     }
 
     return (
-        <div className={styles.create_bg}>
-                <div className={styles.container}>
+        <div>
+                <div className={styles.create_container}>
                     <input ref={refs.title} type="text" placeholder="Topic name"></input>
                     <textarea ref={refs.comment} placeholder="Initial message"></textarea>
-                    <button onClick={create}>Create topic</button>
+                    <div className={styles.button_div}>
+                        <button onClick={create}>Create topic</button>
+                    </div>        
                 </div>
         </div>
     )
