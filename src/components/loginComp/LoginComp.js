@@ -9,7 +9,7 @@ const LoginComp = () => {
 
     const navigate = useNavigate();
     const [message, setMessage] = useState(null);
-    const {setLoggedInPerson} = useContext(MyContext);
+    const {setLoggedInPerson, setNotificationCount} = useContext(MyContext);
 
     const refs = {
         username: useRef(),
@@ -31,6 +31,14 @@ const LoginComp = () => {
                     setMessage(null);
                     setLoggedInPerson(res.user);
                     navigate(`/profile/${res.user._id}/${res.user.username}`);
+
+                    http.get("getNotifications")
+                        .then((res) => {
+                            console.log(res);
+                            if (res.success) {
+                                setNotificationCount(res.notSeenCount)
+                            }
+                    })
                 }
             })
     }
