@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import http from "../../plugins/http";
 import styles from "./OneTopicStyle.module.css";
+import YoutubeVideoComp from "./YoutubeVideoComp";
 
 
 const OneCommentComp = ({profile, index, comment, page}) => {
@@ -11,9 +12,9 @@ const OneCommentComp = ({profile, index, comment, page}) => {
     const dateTime = date.toLocaleTimeString("lt-LT");
     const navigate = useNavigate();
 
-    console.log(page)
+    // console.log(page)
 
-    console.log(index, comment);
+    // console.log(index, comment);
     const [user, setUser] = useState(null);
 
     useEffect(() => {
@@ -45,6 +46,62 @@ const OneCommentComp = ({profile, index, comment, page}) => {
         }
     }
 
+    function checkForYoutubeVideoAndImage(commentInfo) {
+        const arrayOfWords = commentInfo.split(" ");
+        console.log(arrayOfWords);
+
+        let arrayOfYoutubeVideos = [];
+
+        arrayOfWords.map(x => {
+            if (x.includes("youtube.com/watch")) {                
+                arrayOfYoutubeVideos.push(x);
+            }
+        });
+
+        let arrayOfImageLinks = [];
+
+        arrayOfWords.map(y => {
+            if (y.includes("jpeg") || y.includes("jpg") || y.includes("gif") || y.includes("png")) {
+                arrayOfImageLinks.push(y);
+            }
+        })  
+
+        function youtube_parser(url){
+            const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+            const match = url.match(regExp);
+            return (match && match[7].length==11) ? match[7] : false;
+        }
+
+        if (arrayOfYoutubeVideos.length > 0 && arrayOfImageLinks.length > 0) {
+            return (
+                <div className={styles.additional_content}>
+                    {arrayOfYoutubeVideos.map((x, i) => <div key={i}>
+                        <YoutubeVideoComp id={youtube_parser(x)}/>
+                    </div>)}
+                    {arrayOfImageLinks.map(x => <img src={x}/>)}
+                </div>
+            )
+        }
+
+        if (arrayOfYoutubeVideos.length > 0 && arrayOfImageLinks.length === 0) {
+            return (
+                <div className={styles.additional_content}>
+                    {arrayOfYoutubeVideos.map((x, i) => <div key={i}>
+                        <YoutubeVideoComp id={youtube_parser(x)}/>
+                    </div>)}
+                </div>
+            )
+        }
+
+        if (arrayOfYoutubeVideos.length === 0 && arrayOfImageLinks.length > 0) {
+            return (
+                <div className={styles.additional_content}>
+                    {arrayOfImageLinks.map(x => <img src={x}/>)}
+                </div>
+            )
+        }
+    }
+
     return (
         <div>
             <div className={styles.comment_top}>
@@ -63,7 +120,13 @@ const OneCommentComp = ({profile, index, comment, page}) => {
             </div>
             <div className={styles.comment_main}>
                 <div className={`${styles.grow1} ${styles.user_info}`}>{displayCommenter()}</div>
-                <div id='text' className={`${styles.grow2} ${styles.comment}`}>{comment.comment}</div>
+                <div id='text' className={`${styles.grow2} ${styles.comment}`}>
+                    {comment.comment}
+                  
+                        <div>
+                            {checkForYoutubeVideoAndImage(comment.comment)}
+                        </div>                   
+                </div>              
             </div>
         </div>
     )
