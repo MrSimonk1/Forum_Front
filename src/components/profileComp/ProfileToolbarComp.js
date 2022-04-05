@@ -1,8 +1,6 @@
 import React from 'react';
 import styles from "./ProfileStyle.module.css";
-import {CgProfile} from "react-icons/cg";
-import {BsSignpost2} from "react-icons/bs";
-import {AiOutlineComment} from "react-icons/ai";
+
 
 const ProfileToolbarComp = ({selected, setSelected}) => {
 

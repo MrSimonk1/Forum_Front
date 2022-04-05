@@ -5,6 +5,9 @@ import { MyContext } from "../../contexts/MyContext";
 import styles from "./OneTopicStyle.module.css";
 import http from "../../plugins/http";
 import LoginModal from "./LoginModal";
+import io from "socket.io-client";
+
+const socket = io.connect("http://localhost:4000");
 
 const WriteCommentComp = ({topicId, setComments, commentCount, setPage, setCount}) => {
 
@@ -59,7 +62,11 @@ const WriteCommentComp = ({topicId, setComments, commentCount, setPage, setCount
                                 document.querySelector("textarea").value = "";
                                 setTimeout(function () {
                                     scrollBottomRef.current.scrollIntoView({top: 100, behavior: "smooth"});
-                                }, 100);                               
+                                }, 100);
+                                socket.emit("getComments", topicId);
+                                socket.on("setComments", res => {
+                                    setComments(res);
+                                })
                         }
                     })
                 }
