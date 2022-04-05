@@ -49,6 +49,7 @@ const AllTopicsComp = ({url}) => {
                         </div>
                         <PaginationMain page={page} count={count} changePage={changePage}/>
                         {topics && topics.map(x => <div key={x._id}><OneTopicPreview info={x}/></div>)}
+                        <PaginationMain page={page} count={count} changePage={changePage}/>
                     </div>
                 </div>   
             )

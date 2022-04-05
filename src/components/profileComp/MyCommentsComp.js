@@ -43,10 +43,11 @@ const MyCommentsComp = () => {
             </div>
             <PaginationMain page={page} count={count} changePage={changePage}/>
             {!comments && <SmallLoader/>}
-            {comments && comments.length === 0 && <h4>You have not commented on any topic</h4>}
+            {comments && comments.length === 0 && <div className={styles.no_coms}><h4>You have not commented on any topic</h4></div>}
             {comments && comments.length !== 0 && <div className={styles.p10}>
                 {comments.map((x, index) => <div key={x._id}><OneCommentComp profile={true} index={index} comment={x} page={page}/></div>)}
             </div>}
+            <PaginationMain page={page} count={count} changePage={changePage}/>
         </div>
     );
 };

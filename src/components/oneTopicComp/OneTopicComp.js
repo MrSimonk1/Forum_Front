@@ -52,6 +52,7 @@ const OneTopicComp = () => {
         return (
             <div className={styles.bg_comments}>
                         {comments.map((x, i) => <div key={x._id}><OneCommentComp profile={false} index={i} page={page} comment={x}/></div>)}
+                        <PaginationMain page={page} count={count} changePage={changePage}/>
             </div>
         )
     }

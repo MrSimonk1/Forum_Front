@@ -40,6 +40,11 @@
     overflow: hidden;
 }
 
+.no_coms {
+    display: flex;
+    justify-content: center;
+}
+
 .comments_info_bar {
     display: flex;
     background-color: rgb(64,63,60);
@@ -195,7 +200,7 @@
     }
 
     .profile_bg {
-        min-height: 100vh;
+        
         background-color: rgb(217,208,209);
         padding: 20px 50px;
         gap: 20px;
@@ -221,7 +226,6 @@
     } 
 
     .profile_bg {
-        min-height: 100vh;
         background-color: rgb(217,208,209);
         padding: 20px 100px;
         gap: 20px;
@@ -242,7 +246,6 @@
 
 @media (min-width: 1200px) {
     .profile_bg {
-        min-height: 100vh;
         background-color: rgb(217,208,209);
         padding: 20px 250px;
         gap: 20px;
@@ -263,7 +266,6 @@
 
 @media (max-width: 400px) {
     .profile_bg {
-        min-height: 100vh;
         background-color: rgb(217,208,209);
         padding: 10px 10px;
     
