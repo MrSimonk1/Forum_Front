@@ -9,7 +9,6 @@ const OneCommentPreview = ({comment}) => {
     useEffect(() => {
         http.get(`getOneTopic/${comment.topicCommented}`)
             .then((res) => {
-                console.log(res);
                 if (res.success) {
                     setTopic(res.topic);
                 }

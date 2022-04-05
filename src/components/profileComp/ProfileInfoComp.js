@@ -23,7 +23,6 @@ const ProfileInfoComp = () => {
             .then((res) => {
                 if (res.success) {
                    setUser(res.user);
-                   console.log(res);  
                 }
                 if (!res.success) {
                     navigate("/login");

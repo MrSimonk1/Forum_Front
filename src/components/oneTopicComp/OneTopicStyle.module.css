@@ -55,13 +55,14 @@
 }
 
 .comment {
-    white-space: pre;
-    overflow-y: hidden;
-    overflow-wrap: break-word;
-
     display: flex;
+    flex-wrap: wrap; 
     flex-direction: column;
     justify-content: space-between;
+}
+
+.comment_text {
+    white-space: pre-line;
 }
 
 .comment::-webkit-scrollbar {

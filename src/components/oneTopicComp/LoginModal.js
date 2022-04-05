@@ -30,7 +30,6 @@ const LoginModal = ({setShowModal}) => {
                     
                     http.get("getNotifications")
                         .then((res) => {
-                            console.log(res);
                             if (res.success) {
                                 setNotificationCount(res.notSeenCount)
                             }

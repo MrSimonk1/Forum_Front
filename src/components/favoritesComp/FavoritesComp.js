@@ -33,7 +33,6 @@ const FavoritesComp = () => {
                 if (res.success) {
                    setFavorites(res.topics);
                    setCount(res.count) 
-                   console.log(res);
                 }
             })
     }
@@ -49,7 +48,6 @@ const FavoritesComp = () => {
                 if (res.success) {
                    setFavorites(res.topics);
                    setCount(res.count) 
-                   console.log(res);
                 }
             })
     }

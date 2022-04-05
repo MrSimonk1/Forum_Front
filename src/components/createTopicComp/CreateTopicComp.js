@@ -22,7 +22,6 @@ const CreateTopicComp = () => {
 
         http.post(titleInfo, "create-topic")
             .then((res) => {
-                console.log(res);
                 if (!res.success) {
                     setMessage(res.message);
                 }
@@ -38,7 +37,6 @@ const CreateTopicComp = () => {
 
                     http.post(commentInfo, "initial-comment")
                         .then((res) => {
-                            console.log(res);
                             if (res.success) {
                                 navigate(`/topic/${id}/${refs.title.current.value}`)
                             }

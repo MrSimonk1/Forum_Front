@@ -8,15 +8,15 @@ import styles from "./ProfileStyle.module.css";
 const ProfileSmallToolbar = ({selected, setSelected}) => {
     return (
         <div className={styles.small_toolbar}>
-            <div className={selected === 0 && `${styles.selected}`} 
+            <div className={selected === 0 ? `${styles.selected}` : null} 
                  onClick={() => setSelected(0)}>
                 <BsSignpost2/>
             </div>
-            <div className={selected === 1 && `${styles.selected}`} 
+            <div className={selected === 1 ? `${styles.selected}` : null} 
                  onClick={() => setSelected(1)}>
                 <AiOutlineComment/>
             </div>
-            <div className={selected === 2 && `${styles.selected}`}
+            <div className={selected === 2 ? `${styles.selected}` : null}
                  onClick={() => setSelected(2)}>
                 <CgProfile/>
             </div>

@@ -27,7 +27,6 @@ const AllTopicsComp = ({url}) => {
 
         http.get(`${url}/${newPage}`)
             .then((res) => {
-                console.log(res);
                 setTopics(res.topics);
                 setCount(res.count);
             })

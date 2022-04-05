@@ -68,3 +68,16 @@
 .date {
     color: rgb(130,91,18);
 }
+
+@media (max-width: 400px) {
+    .notification_list {
+        height: 200px;
+        width: 220px;
+        position: absolute;
+        right: -100px;
+        top: 25px;
+        border: 1px solid rgb(217,208,209);
+        background-color: rgb(64,63,60);
+        overflow-y: scroll;
+    }
+}

@@ -20,14 +20,12 @@ const OneTopicComp = () => {
         http.get(`getOneTopic/${id}`)
             .then((res) => {
                 if (res.success) {
-                    console.log(res.topic);
                     setTopic(res.topic);
                 } 
             })
         
         http.get(`getCommentsOfOneTopic/${id}/${page}`)
             .then((res) => {
-                console.log(res);
                 if  (res.success) {
                     setComments(res.comments);
                     setCount(res.count);
@@ -40,7 +38,6 @@ const OneTopicComp = () => {
 
         http.get(`getCommentsOfOneTopic/${id}/${newPage}`)
             .then((res) => {
-                console.log(res);
                 if  (res.success) {
                     setComments(res.comments);
                     setCount(res.count);

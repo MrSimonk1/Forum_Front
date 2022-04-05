@@ -52,7 +52,6 @@ const WriteCommentComp = ({topicId, setComments, commentCount, setPage, setCount
                 if (res.success) {
                     http.get(`getCommentsOfOneTopic/${topicId}/${goToLastPage()}`)
                         .then((res) => {
-                            console.log(res);
                             if  (res.success) {
                                 setMessage(res.message);
                                 setTimeout(() => {setMessage(null)}, 1500)                            

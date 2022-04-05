@@ -22,7 +22,6 @@ const OneCommentComp = ({profile, index, comment, page}) => {
 
         http.post(info, "commenterInfo")
             .then((res) => {
-                console.log(res);
                 if (res.success) {
                     setUser(res.user);
                     const date = new Date(res.user.dateRegistration);
@@ -34,7 +33,6 @@ const OneCommentComp = ({profile, index, comment, page}) => {
 
     function checkForYoutubeVideoAndImage(commentInfo) {
         const arrayOfWords = commentInfo.split(" ");
-        console.log(arrayOfWords);
 
         let arrayOfYoutubeVideos = [];
 
@@ -114,12 +112,13 @@ const OneCommentComp = ({profile, index, comment, page}) => {
                         <div>Total comments: {user.totalComments}</div>
                     </div>
                 </div>
-                <div id='text' className={`${styles.grow2} ${styles.comment}`}>
-                    {comment.comment}
-                  
-                        <div>
-                            {checkForYoutubeVideoAndImage(comment.comment)}
-                        </div>                   
+                <div id='text' className={`${styles.comment} ${styles.grow2}`}>
+                    <div className={styles.comment_text}>
+                       {comment.comment} 
+                    </div>
+                    <div>
+                        {checkForYoutubeVideoAndImage(comment.comment)}
+                    </div>                   
                 </div>              
             </div>
         </div>         

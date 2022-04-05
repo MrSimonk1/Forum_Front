@@ -28,7 +28,6 @@ const MyCommentsComp = () => {
         http.get(`getCommentsOfOneUser/${newPage}`)
         .then((res) => {               
              if (res.success) {
-                console.log(res);
                 setComments(res.comments);
                 setCount(res.count);
             }
