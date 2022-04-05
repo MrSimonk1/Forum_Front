@@ -53,6 +53,10 @@ const WriteCommentComp = ({topicId, setComments, commentCount, setPage, setCount
                     http.get(`getCommentsOfOneTopic/${topicId}/${goToLastPage()}`)
                         .then((res) => {
                             if  (res.success) {
+                                // socket.emit("getComments", topicId);
+                                // socket.on("setComments", res => {
+                                //     setComments(res);
+                                // })
                                 setMessage(res.message);
                                 setTimeout(() => {setMessage(null)}, 1500)                            
                                 setComments(res.comments);
@@ -62,10 +66,6 @@ const WriteCommentComp = ({topicId, setComments, commentCount, setPage, setCount
                                 setTimeout(function () {
                                     scrollBottomRef.current.scrollIntoView({top: 100, behavior: "smooth"});
                                 }, 100);
-                                socket.emit("getComments", topicId);
-                                socket.on("setComments", res => {
-                                    setComments(res);
-                                })
                         }
                     })
                 }

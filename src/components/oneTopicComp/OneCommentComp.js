@@ -114,7 +114,7 @@ const OneCommentComp = ({profile, index, comment, page}) => {
                 </div>
                 <div id='text' className={`${styles.comment} ${styles.grow2}`}>
                     <div className={styles.comment_text}>
-                       {comment.comment} 
+                     {comment.comment}
                     </div>
                     <div>
                         {checkForYoutubeVideoAndImage(comment.comment)}
