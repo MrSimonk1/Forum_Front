@@ -10,6 +10,19 @@
     flex: 1
 }
 
+.toolbar_topic {
+    flex: 4;
+
+}
+
+.toolbar_replies_count {
+    flex: 1
+}
+
+.toolbar_last_reply {
+    flex: 2
+}
+
 .bg {
     min-height: 100vh;
 }
@@ -23,6 +36,7 @@
 
 .replies {
     text-align: center;
+    flex: 1
 }
 
 .topic_preview {
@@ -87,4 +101,30 @@
 .favoriteStarEmpty {
     color: rgb(130, 91, 18);
     cursor: pointer;
+}
+
+@media (max-width: 400px) {
+    .toolbar_last_reply {
+        text-align: center;
+    }
+
+    .text {
+        font-size: 14px;
+        color: rgb(64,63,60);
+    }
+
+    .date {
+        font-size: 15px;
+        color: rgb(130, 91, 18);
+    }
+
+    .title {
+        font-size: 15px;
+        font-weight: 600;
+        color: rgb(130, 91, 18);
+        cursor: pointer;
+        border-bottom: 1px solid rgb(176,167,164);
+        transition: 0.2s;
+    }
+     
 }

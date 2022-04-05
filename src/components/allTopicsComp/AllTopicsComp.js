@@ -42,9 +42,9 @@ const AllTopicsComp = ({url}) => {
                 <div>
                     <div className={styles.all_previews}>
                         <div className={styles.info_bar}>
-                            <div className={styles.grow4}>Topic</div>
-                            <div className={`${styles.grow1} ${styles.replies}`}>Replies</div>
-                            <div className={styles.grow2}>Latest reply</div>
+                            <div className={styles.toolbar_topic}>Topic</div>
+                            <div className={`${styles.toolbar_replies_count} ${styles.replies}`}>Replies</div>
+                            <div className={styles.toolbar_last_reply}>Latest reply</div>
                             <div className={styles.empty_div}></div>
                         </div>
                         <PaginationMain page={page} count={count} changePage={changePage}/>

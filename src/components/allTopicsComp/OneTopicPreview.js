@@ -65,7 +65,7 @@ const OneTopicPreview = ({info}) => {
                     <br/> by {info.createdBy}
                 </span>                
             </div>
-            <div className={`${styles.grow1} ${styles.replies} ${styles.text}`}>{info.commentsCount}</div>
+            <div className={`${styles.replies} ${styles.text}`}>{info.commentsCount}</div>
             <div className={styles.grow2}>
                     <span className={styles.date}>
                     {returnDate(info.latestCommentDate)}
