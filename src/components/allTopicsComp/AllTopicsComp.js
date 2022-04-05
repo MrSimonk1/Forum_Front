@@ -5,12 +5,14 @@ import http from "../../plugins/http";
 import OneTopicPreview from "./OneTopicPreview";
 import SmallLoader from '../reusable/SmallLoader';
 import PaginationMain from "../paginationComp/PaginationMain";
+import { useNavigate } from "react-router-dom";
 
 const AllTopicsComp = ({url}) => {
 
     const [topics, setTopics] = useState(null);
     const [page, setPage] = useState(1);
     const [count, setCount] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         http.get(`${url}/${page}`)
@@ -65,7 +67,7 @@ const AllTopicsComp = ({url}) => {
                         </div>
                         <div className={styles.empty}>
                             <h4>You have not created any topics</h4>
-                            <button>Create topic</button>
+                            <button onClick={() => navigate("/create-topic")}>Create topic</button>
                         </div>
                     </div>
                 </div>   

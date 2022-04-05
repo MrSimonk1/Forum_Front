@@ -12,10 +12,6 @@ const OneCommentComp = ({profile, index, comment, page}) => {
     const dateDate = date.toLocaleDateString("lt-Lt");
     const dateTime = date.toLocaleTimeString("lt-LT");
     const navigate = useNavigate();
-
-    // console.log(page)
-
-    // console.log(index, comment);
     const [user, setUser] = useState(null);
     const [userRegistration, setUserRegistration] = useState(null);
 
@@ -35,21 +31,6 @@ const OneCommentComp = ({profile, index, comment, page}) => {
                 }
             })
     }, []);
-
-    // function displayCommenter() {
-    //     if (user) {
-    //         const date = new Date (user.dateRegistration);
-    //         const dateOfRegistration = date.toLocaleDateString("lt-LT");
-    //         return (
-    //             <div>
-    //                 <img className={styles.userImage} src={user.image}/>
-    //                 <div>Registered: {dateOfRegistration}</div>
-    //                 <div>Total topics: {user.totalTopics}</div>
-    //                 <div>Total comments: {user.totalComments}</div>
-    //             </div>
-    //         )
-    //     }
-    // }
 
     function checkForYoutubeVideoAndImage(commentInfo) {
         const arrayOfWords = commentInfo.split(" ");
