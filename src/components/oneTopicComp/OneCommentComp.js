@@ -105,7 +105,7 @@ const OneCommentComp = ({profile, index, comment, page}) => {
     return (
         <div>
             <div className={styles.comment_top}>
-                <div className={styles.grow1}>
+                <div className={styles.written_by}>
                     {profile ? <p className={styles.topic_commented_title}
                                     onClick={() => navigate(`/topic/${comment.topicCommented}/${comment.topicCommentedTitle}`)}>
                                  {comment.topicCommentedTitle}
@@ -113,8 +113,8 @@ const OneCommentComp = ({profile, index, comment, page}) => {
                                : 
                                comment.commentBy}
                 </div>
-                <div className={`${styles.date_position} ${styles.grow2}`}>
-                    <div>{dateDate} {dateTime}</div>
+                <div className={`${styles.date_position}`}>
+                    <div>{dateDate} <span className={styles.xs_d_none}>{dateTime}</span> </div>
                     <div>#{index + 1 + (Number(page) * 10 -10)}</div>
                 </div>
             </div>

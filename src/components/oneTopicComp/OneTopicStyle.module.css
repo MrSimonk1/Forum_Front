@@ -57,6 +57,7 @@
 .comment {
     white-space: pre;
     overflow-y: hidden;
+    overflow-wrap: break-word;
 
     display: flex;
     flex-direction: column;
@@ -72,9 +73,14 @@
     background-color: darkgrey;
 }
 
+.written_by {
+    flex: 1;
+}
+
 .date_position {
     display: flex;
     justify-content: space-between;
+    flex: 2;
 }
 
 .userImage {
@@ -148,4 +154,55 @@
 
 .additional_content img {
     height: 100px;
+}
+
+@media (max-width: 400px) {
+    .title {
+        background-color: rgb(64,63,60);
+        color: white;
+        font-size: 18px;
+        padding: 10px;
+        border-radius: 5px 5px 0 0;
+    }
+
+    .xs_d_none {
+        display: none;
+    }
+
+    .written_by {
+        flex: 1;
+        font-size: 15px;
+    }
+    
+    .date_position {
+        display: flex;
+        justify-content: space-between;
+        flex: 2;
+        font-size: 15px;
+    }
+
+    .comment_top {
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(131, 120, 117);
+        padding: 10px;
+    }
+
+    .comment_main {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .userImage {
+        width: 30%;
+        margin-bottom: 10px;
+    }
+    
+    .user_info {
+        padding: 10px;
+        background-color: rgb(190, 181, 182);
+        font-size: 15px;
+    }
+    
 }
