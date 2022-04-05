@@ -156,6 +156,11 @@
     height: 100px;
 }
 
+.frame {
+    height: 100px;
+    width: 180px;
+}
+
 @media (max-width: 400px) {
     .title {
         background-color: rgb(64,63,60);
@@ -203,6 +208,11 @@
         padding: 10px;
         background-color: rgb(190, 181, 182);
         font-size: 15px;
+    }
+
+    .frame {
+        height: 100px;
+        width: 150px;
     }
     
 }
