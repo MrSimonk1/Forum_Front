@@ -47,7 +47,7 @@ const MyCommentsComp = () => {
             {comments && comments.length !== 0 && <div className={styles.p10}>
                 {comments.map((x, index) => <div key={x._id}><OneCommentComp profile={true} index={index} comment={x} page={page}/></div>)}
             </div>}
-            <PaginationMain page={page} count={count} changePage={changePage}/>
+            {/* <PaginationMain page={page} count={count} changePage={changePage}/> */}
         </div>
     );
 };
