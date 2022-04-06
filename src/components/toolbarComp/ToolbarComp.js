@@ -37,7 +37,7 @@ const ToolbarComp = () => {
                     Forum
                 </div>
                 <div className="toolbar-left">
-                    <div onClick={() => navigate("/favorites")}>Favorites {favoriteCounter}</div>
+                    <div onClick={() => navigate("/favorites")}>Favorites {favoriteCounter > 0 && favoriteCounter}</div>
                     {loggedInPerson && <NotificationComp/>}
                     {loggedInPerson ? <div onClick={() => goToProfile()}>Profile</div> : <div onClick={() => navigate("/login")}>Login</div>}
                 </div>

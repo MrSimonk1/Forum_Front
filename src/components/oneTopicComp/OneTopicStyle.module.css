@@ -55,6 +55,8 @@
 }
 
 .comment {
+    overflow-y: hidden;
+
     display: flex;
     flex-wrap: wrap; 
     flex-direction: column;
@@ -63,6 +65,7 @@
 
 .comment_text {
     white-space: pre-line;
+    
 }
 
 .comment::-webkit-scrollbar {
