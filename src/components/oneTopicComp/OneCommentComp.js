@@ -62,7 +62,7 @@ const OneCommentComp = ({profile, index, comment, page}) => {
                     {arrayOfYoutubeVideos.map((x, i) => <div key={i}>
                         <YoutubeVideoComp id={youtube_parser(x)}/>
                     </div>)}
-                    {arrayOfImageLinks.map(x => <img src={x}/>)}
+                    {arrayOfImageLinks.map((x, i) => <img key={i} src={x}/>)}
                 </div>
             )
         }
@@ -80,7 +80,7 @@ const OneCommentComp = ({profile, index, comment, page}) => {
         if (arrayOfYoutubeVideos.length === 0 && arrayOfImageLinks.length > 0) {
             return (
                 <div className={styles.additional_content}>
-                    {arrayOfImageLinks.map(x => <img src={x}/>)}
+                    {arrayOfImageLinks.map((x, i) => <img key={i} src={x}/>)}
                 </div>
             )
         }
